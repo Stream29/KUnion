@@ -5,12 +5,7 @@ import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SealedClassSerializer
 import kotlinx.serialization.builtins.NothingSerializer
-import kotlinx.serialization.internal.AbstractPolymorphicSerializer
-import kotlin.reflect.KCallable
-import kotlin.reflect.KClass
-import kotlin.reflect.KFunction
-import kotlin.reflect.KType
-import kotlin.reflect.KTypeParameter
+import kotlin.reflect.*
 import kotlin.reflect.KVisibility
 
 
@@ -35,7 +30,7 @@ public fun <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15
             override val typeParameters = emptyList<KTypeParameter>()
             override val supertypes = emptyList<KType>()
             override val sealedSubclasses = emptyList<KClass<Any>>()
-            override val visibility:KVisibility? = null
+            override val visibility: KVisibility? = null
             override val isFinal = false
             override val isOpen = false
             override val isAbstract = false
@@ -57,7 +52,7 @@ public fun <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15
 }
 
 public class KUnionSerializer
-<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(
+<T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>(
     private val serializer0: KSerializer<T0>,
     private val serializer1: KSerializer<T1>,
     private val serializer2: KSerializer<T2>,
