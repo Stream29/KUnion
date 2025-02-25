@@ -1,9 +1,11 @@
-import io.github.stream29.union.unionSerializerOf
+import io.github.stream29.union.Union5
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.descriptors.elementNames
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.serializer
 import kotlin.jvm.JvmInline
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 val json = Json {
     prettyPrint = true
@@ -13,38 +15,34 @@ val json = Json {
 
 @Serializable
 @JvmInline
-value class FakeUnion(val value: FakeAny)
+@SerialName("MyValueClass")
+value class ValueClass(val value: String)
 
 @Serializable
-sealed interface FakeAny
+@SerialName("MyDataClass")
+data class DataClass(val value: Int)
 
 @Serializable
-data class FakeType0(val value: String) : FakeAny
+data class GenericClass<T>(val value: T)
 
-@Serializable
-data class FakeType1(val value: Int) : FakeAny
+typealias TestType = Union5<ValueClass, DataClass, GenericClass<String>, List<String>, Int>
+
+fun testWith(value: Any) {
+    val serializer = serializer<TestType>()
+    val jsonString = json.encodeToString(serializer, TestType(value))
+    println(jsonString)
+    val deserialized = json.decodeFromString(serializer, jsonString)
+    println(deserialized)
+    assertEquals(value, deserialized.value)
+}
 
 class SerializeTest {
     @Test
     fun testSerialDescriptor() {
-        val serializer = unionSerializerOf<FakeType0, FakeType1, Nothing, Nothing, Nothing,
-                Nothing, Nothing, Nothing, Nothing, Nothing,
-                Nothing, Nothing, Nothing, Nothing, Nothing,
-                Nothing, Nothing, Nothing, Nothing, Nothing,
-                Nothing, Nothing, Nothing>(
-            FakeType0.serializer(),
-            FakeType1.serializer()
-        )
-        println(serializer.descriptor)
-        println(serializer.descriptor.getElementDescriptor(0))
-//        println(serializer.descriptor.getElementDescriptor(0).getElementDescriptor(1).elementNames.toList())
-        //language=JSON
-        val jsonString = """
-        {
-          "type": "FakeType1",
-          "value": 114514
-        }
-        """.trimIndent()
-        println(json.decodeFromString(serializer, jsonString))
+        testWith(ValueClass("Hello"))
+        testWith(DataClass(42))
+        testWith(42)
+        testWith(arrayListOf("Hello", "World"))
+        testWith(GenericClass("World"))
     }
 }
