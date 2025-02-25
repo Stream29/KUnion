@@ -88,6 +88,17 @@ kotlin {
         }
     }
 
+    applyDefaultHierarchyTemplate {
+        common {
+            group("withoutJs") {
+                withJvm()
+                withNative()
+                withWasmJs()
+                withWasmWasi()
+            }
+        }
+    }
+
     sourceSets {
         commonMain {
             dependencies {
