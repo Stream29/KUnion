@@ -5,12 +5,12 @@ package io.github.stream29.union
 import kotlin.jvm.JvmName
 
 @JvmName("Union0")
-public inline fun <reified T0> Union(value: T0):
+public inline fun <reified T0 : Any> Union(value: T0):
         KUnion<T0, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     KUnion(value)
 
 @JvmName("Union1")
-public inline fun <reified T0, reified T1> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any> Union(value: Any?):
         KUnion<T0, T1, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1 -> KUnion(value)
@@ -18,7 +18,7 @@ public inline fun <reified T0, reified T1> Union(value: Any?):
     }
 
 @JvmName("Union2")
-public inline fun <reified T0, reified T1, reified T2> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any> Union(value: Any?):
         KUnion<T0, T1, T2, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1, is T2 -> KUnion(value)
@@ -26,7 +26,7 @@ public inline fun <reified T0, reified T1, reified T2> Union(value: Any?):
     }
 
 @JvmName("Union3")
-public inline fun <reified T0, reified T1, reified T2, reified T3> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any> Union(value: Any?):
         KUnion<T0, T1, T2, T3, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1, is T2, is T3 -> KUnion(value)
@@ -34,7 +34,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3> Union(value: 
     }
 
 @JvmName("Union4")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any> Union(value: Any?):
         KUnion<T0, T1, T2, T3, T4, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1, is T2, is T3, is T4 -> KUnion(value)
@@ -42,7 +42,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4> U
     }
 
 @JvmName("Union5")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any> Union(value: Any?):
         KUnion<T0, T1, T2, T3, T4, T5, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1, is T2, is T3, is T4, is T5 -> KUnion(value)
@@ -50,7 +50,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union6")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6> Union(value: Any?):
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any> Union(value: Any?):
         KUnion<T0, T1, T2, T3, T4, T5, T6, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
         is T0, is T1, is T2, is T3, is T4, is T5, is T6 -> KUnion(value)
@@ -58,7 +58,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union7")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -67,7 +67,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union8")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -76,7 +76,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union9")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -85,7 +85,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union10")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -94,7 +94,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union11")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -103,7 +103,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union12")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -112,7 +112,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union13")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -124,7 +124,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union14")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -136,7 +136,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union15")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -148,7 +148,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union16")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -160,7 +160,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union17")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, Nothing, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -172,7 +172,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union18")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17, reified T18> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any, reified T18 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, Nothing, Nothing, Nothing, Nothing> =
     when (value) {
@@ -184,7 +184,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union19")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17, reified T18, reified T19> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any, reified T18 : Any, reified T19 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, Nothing, Nothing, Nothing> =
     when (value) {
@@ -196,7 +196,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union20")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17, reified T18, reified T19, reified T20> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any, reified T18 : Any, reified T19 : Any, reified T20 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, Nothing, Nothing> =
     when (value) {
@@ -208,7 +208,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union21")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17, reified T18, reified T19, reified T20, reified T21> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any, reified T18 : Any, reified T19 : Any, reified T20 : Any, reified T21 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, Nothing> =
     when (value) {
@@ -220,7 +220,7 @@ public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, r
     }
 
 @JvmName("Union22")
-public inline fun <reified T0, reified T1, reified T2, reified T3, reified T4, reified T5, reified T6, reified T7, reified T8, reified T9, reified T10, reified T11, reified T12, reified T13, reified T14, reified T15, reified T16, reified T17, reified T18, reified T19, reified T20, reified T21, reified T22> Union(
+public inline fun <reified T0 : Any, reified T1 : Any, reified T2 : Any, reified T3 : Any, reified T4 : Any, reified T5 : Any, reified T6 : Any, reified T7 : Any, reified T8 : Any, reified T9 : Any, reified T10 : Any, reified T11 : Any, reified T12 : Any, reified T13 : Any, reified T14 : Any, reified T15 : Any, reified T16 : Any, reified T17 : Any, reified T18 : Any, reified T19 : Any, reified T20 : Any, reified T21 : Any, reified T22 : Any> Union(
     value: Any?
 ): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> =
     when (value) {
