@@ -42,7 +42,7 @@ class SerializeTest {
         testWith(ValueClass("Hello"))
         testWith(DataClass(42))
         testWith(42)
-        testWith(arrayListOf("Hello", "World"))
+        testWith(listOf("Hello"))
         testWith(GenericClass("World"))
     }
 }

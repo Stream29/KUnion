@@ -9,7 +9,6 @@ import kotlinx.serialization.descriptors.SerialKind
 import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.descriptors.buildSerialDescriptor
 import kotlinx.serialization.encoding.*
-import kotlin.reflect.KClass
 
 @Suppress("unchecked_cast")
 @OptIn(InternalSerializationApi::class, ExperimentalSerializationApi::class)
@@ -85,14 +84,13 @@ public class KUnionSerializer
         value: KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>
     ) {
         val unionValue = value.value
-        val kClass = unionValue::class
-        var valueSerializer = kClass.tryToGetSerializer()
-        val serialName = valueSerializer.descriptor.serialName
+        val valueSerialName = unionValue.tryToGetSerialName()
+            ?: unionValue::class.run { throw SerializationException("Cannot find serializer for ${qualifiedNameOrNull ?: simpleName ?: this}") }
+        val valueSerializer = serializerOfSerialName(valueSerialName)
+            ?: throw SerializationException("$valueSerialName is not in the union of ${validSerializers.map { it.descriptor.serialName }}")
+
         encoder.encodeStructure(descriptor) {
-            encodeStringElement(descriptor, 0, serialName)
-            println("serialName: $serialName")
-            println("descriptor: ${valueSerializer.descriptor::class}")
-            println("unionValue: $unionValue")
+            encodeStringElement(descriptor, 0, valueSerialName)
             encodeSerializableElement(descriptor, 1, valueSerializer as KSerializer<Any>, unionValue)
         }
     }
@@ -105,36 +103,37 @@ public class KUnionSerializer
             )
         }
 
-    private fun KClass<*>.tryToGetSerializer(): KSerializer<*> {
-        // happy path: same class and no type parameters
-        // This method causes error on Kotlin/Native, Kotlin/Js, and Kotlin/Wasm
-//        serializerOrNull()?.let { return it }
-        // try to match by name
-        validSerializers.firstOrNull { (qualifiedNameOrNull ?: "") == it.descriptor.serialName }
+    private fun serializerOfSerialName(serialName: String): KSerializer<*>? =
+        validSerializers.firstOrNull { it.descriptor.serialName == serialName }
+
+    private fun String.isValidSerialName(): Boolean = serializerOfSerialName(this) != null
+
+    private fun Any.tryToGetSerialName(): String? {
+        val kClass = this::class
+        kClass.qualifiedNameOrNull
+            ?.takeIf { it.isValidSerialName() }
             ?.let { return it }
-        // try to match by known classes, for platform-mapped classes and to cover the situations that KClass.qualifiedName doesn't work
-        kClassToSerialName[this]?.let { serialName ->
-            validSerializers.firstOrNull { it.descriptor.serialName == serialName }?.let { return it }
-        }
-        qualifiedNameOrNull?.let {
-            jClassNameToSerialName[it]?.let { serialName ->
-                validSerializers.firstOrNull { it.descriptor.serialName == serialName }?.let { return it }
-            }
-        }
-        // try to match by type parameters
+        kClassToSerialName[kClass]
+            ?.takeIf { it.isValidSerialName() }
+            ?.let { return it }
         val acc = mutableListOf<KSerializer<*>>()
         repeat(24) {
             try {
-                val nothingSerializer = serializer(this, acc, false)
-                val serialName = nothingSerializer.descriptor.serialName
-                return validSerializers.firstOrNull { it.descriptor.serialName == serialName }
-                    ?: throw IllegalArgumentException("$serialName is not in the union of ${validSerializers.map { it.descriptor.serialName }}")
+                serializer(kClass, acc, false).descriptor.serialName
+                    .takeIf { it.isValidSerialName() }
+                    ?.let { return it }
             } catch (_: SerializationException) {
                 acc.add(NothingSerializer())
             }
         }
-
-        throw SerializationException("Cannot find serializer for ${qualifiedNameOrNull ?: simpleName ?: this}")
+        kClassToSerialName.forEach { (kClass, serialName) ->
+            if (kClass.isInstance(this@tryToGetSerialName)) {
+                serialName
+                    .takeIf { it.isValidSerialName() }
+                    ?.let { return it }
+            }
+        }
+        return null
     }
 
     private fun CompositeDecoder.decodeByIndex(): Any {
@@ -179,19 +178,8 @@ private val kClassToSerialName = buildMap {
         listOf(Collection::class, List::class, MutableList::class, ArrayList::class),
         "kotlin.collections.ArrayList"
     )
-    putMulti(listOf(HashSet::class), "kotlin.collections.HashSet")
     putMulti(listOf(Set::class, MutableSet::class, LinkedHashSet::class), "kotlin.collections.LinkedHashSet")
-    putMulti(listOf(HashMap::class), "kotlin.collections.HashMap")
+    putMulti(listOf(HashSet::class), "kotlin.collections.HashSet")
     putMulti(listOf(Map::class, MutableMap::class, LinkedHashMap::class), "kotlin.collections.LinkedHashMap")
+    putMulti(listOf(HashMap::class), "kotlin.collections.HashMap")
 }
-
-private val jClassNameToSerialName = mapOf(
-    "java.util.Arrays.ArrayList" to "kotlin.collections.ArrayList",
-    "java.util.HashSet" to "kotlin.collections.HashSet",
-    "java.util.LinkedHashSet" to "kotlin.collections.LinkedHashSet",
-    "java.util.HashMap" to "kotlin.collections.HashMap",
-    "java.util.LinkedHashMap" to "kotlin.collections.LinkedHashMap",
-    "java.util.Collections.SingletonList" to "kotlin.collections.ArrayList",
-    "java.util.Collections.SingletonSet" to "kotlin.collections.HashSet",
-    "java.util.Collections.SingletonMap" to "kotlin.collections.HashMap"
-)
