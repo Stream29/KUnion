@@ -1,4 +1,4 @@
-import io.github.stream29.union.Union5
+import io.github.stream29.union.Union6
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -25,7 +25,14 @@ data class DataClass(val value: Int)
 @Serializable
 data class GenericClass<T>(val value: T)
 
-typealias TestType = Union5<ValueClass, DataClass, GenericClass<String>, List<String>, Int>
+typealias TestType = Union6<
+        ValueClass,
+        DataClass,
+        GenericClass<String>,
+        List<String>,
+        HashMap<String, String>,
+        Int
+        >
 
 fun testWith(value: Any) {
     val serializer = serializer<TestType>()
@@ -43,6 +50,7 @@ class SerializeTest {
         testWith(DataClass(42))
         testWith(42)
         testWith(listOf("Hello"))
+        testWith(mapOf("Hello" to "World"))
         testWith(GenericClass("World"))
     }
 }

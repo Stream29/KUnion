@@ -133,6 +133,14 @@ public class KUnionSerializer
                     ?.let { return it }
             }
         }
+        multiMatchKClassToSerialName.forEach { (kClasses, serialNames) ->
+            if (kClasses.any { it.isInstance(this@tryToGetSerialName) }) {
+                serialNames.forEach {
+                    it.takeIf { it.isValidSerialName() }
+                        ?.let { return it }
+                }
+            }
+        }
         return null
     }
 
@@ -183,3 +191,10 @@ private val kClassToSerialName = buildMap {
     putMulti(listOf(Map::class, MutableMap::class, LinkedHashMap::class), "kotlin.collections.LinkedHashMap")
     putMulti(listOf(HashMap::class), "kotlin.collections.HashMap")
 }
+
+private val multiMatchKClassToSerialName = mapOf(
+    listOf(Set::class, MutableSet::class, LinkedHashSet::class, HashSet::class) to
+            listOf("kotlin.collections.LinkedHashSet", "kotlin.collections.HashSet"),
+    listOf(Map::class, MutableMap::class, LinkedHashMap::class, HashMap::class) to
+            listOf("kotlin.collections.LinkedHashMap", "kotlin.collections.HashMap")
+)
