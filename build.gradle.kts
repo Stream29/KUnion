@@ -16,7 +16,7 @@ plugins {
 }
 
 group = "io.github.stream29"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -118,12 +118,12 @@ kotlin {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates((group as String), "streamlin", version.toString())
+    coordinates((group as String), "kunion", version.toString())
     pom {
-        name.set("Streamlin")
+        name.set("KUnion")
         description.set("A kotlin union by Stream.")
         inceptionYear.set("2025")
-        url.set("https://github.com/Stream29/Streamlin")
+        url.set("https://github.com/Stream29/KUnion")
         licenses {
             license {
                 name.set("Apache License Version 2.0")
@@ -139,9 +139,9 @@ mavenPublishing {
             }
         }
         scm {
-            url.set("https://github.com/Stream29/Streamlin")
-            connection.set("scm:git:git://github.com/Stream29/Streamlin.git")
-            developerConnection.set("scm:git:ssh://git@github.com:Stream29/Streamlin.git")
+            url.set("https://github.com/Stream29/KUnion")
+            connection.set("scm:git:git://github.com/Stream29/KUnion.git")
+            developerConnection.set("scm:git:ssh://git@github.com:Stream29/KUnion.git")
         }
     }
 }
@@ -150,7 +150,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = URI("https://maven.pkg.github.com/Stream29/Streamlin")
+            url = URI("https://maven.pkg.github.com/Stream29/KUnion")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")!!
                 password = System.getenv("GITHUB_TOKEN")!!
