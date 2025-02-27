@@ -1,4 +1,5 @@
-@file:Suppress("FunctionName", "DEPRECATION_ERROR")
+@file:Suppress("FunctionName")
+@file:OptIn(InternalUnionApi::class)
 
 package io.github.stream29.union
 
