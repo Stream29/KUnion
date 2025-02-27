@@ -110,6 +110,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+                implementation("com.charleskorn.kaml:kaml:0.72.0")
             }
         }
     }
