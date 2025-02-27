@@ -12,7 +12,7 @@ import kotlinx.serialization.encoding.*
 
 @Suppress("unchecked_cast")
 @OptIn(InternalSerializationApi::class, ExperimentalSerializationApi::class)
-public class KUnionSerializer
+public class UnionSerializer
 <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>(
     serializer0: KSerializer<T0>,
     serializer1: KSerializer<T1>,
@@ -37,7 +37,7 @@ public class KUnionSerializer
     serializer20: KSerializer<T0>,
     serializer21: KSerializer<T1>,
     serializer22: KSerializer<T2>,
-) : KSerializer<KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>> {
+) : KSerializer<Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>> {
     private val validSerializers = sequenceOf(
         serializer0,
         serializer1,
@@ -81,7 +81,7 @@ public class KUnionSerializer
 
     override fun serialize(
         encoder: Encoder,
-        value: KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>
+        value: Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>
     ) {
         val unionValue = value.value
         val valueSerialName = unionValue.tryToGetSerialName()
@@ -96,9 +96,9 @@ public class KUnionSerializer
     }
 
 
-    override fun deserialize(decoder: Decoder): KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> =
+    override fun deserialize(decoder: Decoder): Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> =
         decoder.decodeStructure(descriptor) {
-            KUnion<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(
+            UnsafeUnion(
                 if (decodeSequentially()) decodeInOrder() else decodeByIndex()
             )
         }

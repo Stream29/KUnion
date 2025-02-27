@@ -1,3 +1,4 @@
+import io.github.stream29.union.SafeUnion6
 import io.github.stream29.union.Union6
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -36,7 +37,7 @@ typealias TestType = Union6<
 
 fun testWith(value: Any) {
     val serializer = serializer<TestType>()
-    val jsonString = json.encodeToString(serializer, TestType(value))
+    val jsonString = json.encodeToString(serializer, SafeUnion6(value))
     println(jsonString)
     val deserialized = json.decodeFromString(serializer, jsonString)
     println(deserialized)
