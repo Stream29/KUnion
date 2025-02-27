@@ -6,6 +6,11 @@ import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
+/**
+ * Consume the value of the union if it is of the 1st type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <reified T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume0(
     consumer: (T0) -> Unit
@@ -18,6 +23,11 @@ public inline fun <reified T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 2nd type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, reified T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume1(
     consumer: (T1) -> Unit
@@ -30,6 +40,11 @@ public inline fun <T0 : Any, reified T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 3rd type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, reified T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume2(
     consumer: (T2) -> Unit
@@ -42,6 +57,11 @@ public inline fun <T0 : Any, T1 : Any, reified T2 : Any, T3 : Any, T4 : Any, T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 4th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, reified T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume3(
     consumer: (T3) -> Unit
@@ -54,6 +74,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, reified T3 : Any, T4 : Any, T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 5th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, reified T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume4(
     consumer: (T4) -> Unit
@@ -66,6 +91,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, reified T4 : Any, T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 6th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, reified T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume5(
     consumer: (T5) -> Unit
@@ -78,6 +108,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, reified T5 
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 7th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, reified T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume6(
     consumer: (T6) -> Unit
@@ -90,6 +125,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, r
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 8th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, reified T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume7(
     consumer: (T7) -> Unit
@@ -102,6 +142,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 9th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, reified T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume8(
     consumer: (T8) -> Unit
@@ -114,6 +159,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 10th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, reified T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume9(
     consumer: (T9) -> Unit
@@ -126,6 +176,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 11th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, reified T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume10(
     consumer: (T10) -> Unit
@@ -138,6 +193,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 12th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, reified T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume11(
     consumer: (T11) -> Unit
@@ -150,6 +210,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 13th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, reified T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume12(
     consumer: (T12) -> Unit
@@ -162,6 +227,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 14th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, reified T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume13(
     consumer: (T13) -> Unit
@@ -174,6 +244,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 15th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, reified T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume14(
     consumer: (T14) -> Unit
@@ -186,6 +261,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 16th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, reified T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume15(
     consumer: (T15) -> Unit
@@ -198,6 +278,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 17th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, reified T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume16(
     consumer: (T16) -> Unit
@@ -210,6 +295,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 18th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, reified T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume17(
     consumer: (T17) -> Unit
@@ -222,6 +312,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 19th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, reified T18 : Any, T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume18(
     consumer: (T18) -> Unit
@@ -234,6 +329,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 20th type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, reified T19 : Any, T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume19(
     consumer: (T19) -> Unit
@@ -246,6 +346,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 21st type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, reified T20 : Any, T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume20(
     consumer: (T20) -> Unit
@@ -258,6 +363,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 22nd type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, reified T21 : Any, T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume21(
     consumer: (T21) -> Unit
@@ -270,6 +380,11 @@ public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T
     return this
 }
 
+/**
+ * Consume the value of the union if it is of the 23rd type in the union.
+ *
+ * Please mention that this function only consider the class, not the type parameters.
+ */
 public inline fun <T0 : Any, T1 : Any, T2 : Any, T3 : Any, T4 : Any, T5 : Any, T6 : Any, T7 : Any, T8 : Any, T9 : Any, T10 : Any, T11 : Any, T12 : Any, T13 : Any, T14 : Any, T15 : Any, T16 : Any, T17 : Any, T18 : Any, T19 : Any, T20 : Any, T21 : Any, reified T22 : Any>
         Union<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>.consume22(
     consumer: (T22) -> Unit
