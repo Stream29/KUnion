@@ -10,6 +10,12 @@ import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.descriptors.buildSerialDescriptor
 import kotlinx.serialization.encoding.*
 
+/**
+ * This serializer cannot work completely correctly due to the runtime type erasure.
+ * It will try to find the correct serializer for the value, but it may fail on generic or polymorphic classes.
+ *
+ * Please don't use it on union types like `Union2<List<Int>, List<String>>`. **THAT WILL PRODUCE ERRORS AT RUNTIME**.
+ */
 @Suppress("unchecked_cast")
 @OptIn(InternalSerializationApi::class, ExperimentalSerializationApi::class)
 public class UnionSerializer
