@@ -1,3 +1,4 @@
+import com.charleskorn.kaml.Yaml
 import io.github.stream29.union.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -14,6 +15,8 @@ val json = Json {
     ignoreUnknownKeys = true
 }
 
+val yaml = Yaml()
+
 @Serializable
 @JvmInline
 @SerialName("MyValueClass")
@@ -28,9 +31,9 @@ data class GenericClass<T>(val value: T)
 
 fun serializeAndDeserialize(value: Any) {
     val serializer = serializer<TestType>()
-    val jsonString = json.encodeToString(serializer, SafeUnion6(value))
+    val jsonString = yaml.encodeToString(serializer, SafeUnion6(value))
     println(jsonString)
-    val deserialized = json.decodeFromString(serializer, jsonString)
+    val deserialized = yaml.decodeFromString(serializer, jsonString)
     println(deserialized)
     assertEquals(value, deserialized.value)
 }
