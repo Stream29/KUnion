@@ -13,6 +13,7 @@ import kotlin.jvm.JvmInline
  *
  * @property value The value of the union
  */
+@Suppress("unused")
 @Serializable(UnionSerializer::class)
 @JvmInline
 public value class Union
