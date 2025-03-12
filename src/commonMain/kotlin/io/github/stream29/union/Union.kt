@@ -25,6 +25,16 @@ internal constructor(
 )
 
 /**
+ * A [Union] that holds in [T].
+ */
+public typealias UnionIn<T> = Union<in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T, in T>
+
+/**
+ * A [Union] that holds out [T].
+ */
+public typealias UnionOut<T> = Union<out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T, out T>
+
+/**
  * A [Union] that can hold 1 type of instance.
  */
 public typealias Union1<T0> = Union<T0, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing>
